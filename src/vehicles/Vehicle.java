@@ -4,6 +4,8 @@ import vehicles.enums.*;
 
 public abstract class Vehicle {
 
+	protected int id = -1;	
+	
 	protected int priceForSale;
 	protected int purchasePrice;
 	
@@ -20,6 +22,7 @@ public abstract class Vehicle {
 		this.model = vehicleDetails.model;
 		this.priceForSale =(int) (vehicleDetails.purchasePrice * 1.2);
 		this.purchasePrice = vehicleDetails.purchasePrice;
+		this.id = vehicleDetails.id;
 	}
 
 	
