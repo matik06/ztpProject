@@ -1,6 +1,6 @@
 package vehicles.enums;
 
-public enum EngineModels 
+public enum EngineModel 
 {
 	//CAR
 	_1900TDI, _1800, _3000TDI, _1600,

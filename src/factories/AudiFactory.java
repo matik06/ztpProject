@@ -11,15 +11,15 @@ import vehicles.Car;
 public class AudiFactory extends CarFactory {
 
 	@Override
-	public Car createCar(CarModels model ,EngineModels engine, Colors color,BodyType bType, int nrOfDoors ) {
+	public Car createCar(Model model ,EngineModel engine, Color color,BodyType bType, int nrOfDoors ) {
 		
-		if (model == CarModels.A3) {
+		if (model == Model.A3) {
 			return new AudiA3(engine,color,bType,nrOfDoors);
 		} 
-		else if (model == CarModels.A4) {
+		else if (model == Model.A4) {
 			return new AudiA4(engine,color,bType,nrOfDoors);
 		}
-		else if (model == CarModels.A6) {
+		else if (model == Model.A6) {
 			return new AudiA6(engine,color,bType,nrOfDoors);
 		}
 		else {

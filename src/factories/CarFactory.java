@@ -6,9 +6,9 @@ import vehicles.Car;
 
 public abstract class CarFactory {
 	
-	public abstract Car createCar(CarModels model,EngineModels engine, Colors color,BodyType bType, int nrOfDoors);
+	public abstract Car createCar(Model model,EngineModel engine, Color color,BodyType bType, int nrOfDoors);
 	
-	public Car prepare(CarModels model,EngineModels engine, Colors color,BodyType bType, int nrOfDoors) {
+	public Car prepare(Model model,EngineModel engine, Color color,BodyType bType, int nrOfDoors) {
 	
 		Car car = createCar(model,engine,color,bType,nrOfDoors);
 		

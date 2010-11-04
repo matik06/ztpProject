@@ -1,13 +1,11 @@
 package vehicles;
 
-import vehicles.enums.*;
-
-public class AudiA3 extends Car 
+public class AudiA3 extends Audi
 {
-	public AudiA3(EngineModels engine, Colors color,BodyType bType, int nrOfDoors)
-	{
-		super(engine,color,bType,nrOfDoors);
-		brand  = "Audi";
-		model = "A3";
+
+	public AudiA3(VehicleDetail vehicleDetails) {
+		
+		super(vehicleDetails);
 	}
+
 }

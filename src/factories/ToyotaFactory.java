@@ -10,15 +10,15 @@ import vehicles.ToyotaYaris;
 public class ToyotaFactory extends CarFactory {
 	
 	@Override
-	public Car createCar(CarModels model,EngineModels engine, Colors color,BodyType bType, int nrOfDoors) {
+	public Car createCar(Model model,EngineModel engine, Color color,BodyType bType, int nrOfDoors) {
 		
-		if (model == CarModels.AVENSIS) {
+		if (model == Model.AVENSIS) {
 			return new ToyotaAvensis(engine,color,bType,nrOfDoors);
 		} 
-		else if (model == CarModels.COROLLA) {
+		else if (model == Model.COROLLA) {
 			return new ToyotaCorolla(engine,color,bType,nrOfDoors);
 		}
-		else if (model == CarModels.YARIS) {
+		else if (model == Model.YARIS) {
 			return new ToyotaYaris(engine,color,bType,nrOfDoors);
 		}
 		else {

@@ -2,67 +2,28 @@ package vehicles;
 
 import vehicles.enums.*;
 
-public abstract class Car {	
+public abstract class Car extends Vehicle{	
 
-	public String brand;
-	public String model;
-	public Boolean sold;
-	private EngineModels engine;
-	private int nrOfDoors;
-	private Colors ccolor;
-	private BodyType bType;
+	private BodyType bodyType = null;
 	
-	public Car(EngineModels engine, Colors color,BodyType bType, int nrOfDoors)
+	public Car(VehicleDetail vehicleDetails)
 	{
-		setColor(color);
-		setEngine(engine);
-		setBody(bType);
-		setNumberOfDoors(nrOfDoors);
-	}
-	
-	public void setBody(BodyType body)
-	{
-		bType = body;
-	}
-	
-	public BodyType getBodyType()
-	{
-		return bType;
-	}
-	
-	public void setColor(Colors c)
-	{
-		ccolor = c;
-	}
-	
-	public void setNumberOfDoors(int nr)
-	{
-		nrOfDoors = nr;
-	} 
-	
-	public void setEngine(EngineModels eng)
-	{
-		engine = eng;
+		super(vehicleDetails);
+		this.setBodyType(vehicleDetails.bodyType);
 	}
 	
 	
-	public Colors getColor()
-	{
-		return ccolor;
+	public void setBodyType(BodyType bodyType) {
+		this.bodyType = bodyType;
 	}
-	
-	public int getNumberOfDoors()
-	{
-		return nrOfDoors;
+
+	public BodyType getBodyType() {
+		return bodyType;
 	}
-	public EngineModels getEngine()
-	{
-		return engine;
-	}
-	
+
 	public void checkOil()
 	{
-		System.out.println("Sprawdzanie stanu oleju..");
+		System.out.println("Sprawdzanie stanu oleju w samochodzie");
 	}
 	
 	public void wash()

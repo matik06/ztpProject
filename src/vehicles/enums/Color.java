@@ -1,5 +1,5 @@
 package vehicles.enums;
 
-public enum Colors {
+public enum Color {
 	RED, BLACK, WHITE, GREEN, YELLOW, BLUE;
 }

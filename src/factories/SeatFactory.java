@@ -10,15 +10,15 @@ import vehicles.SeatToledo;
 public class SeatFactory extends CarFactory {
 
 	@Override
-	public Car createCar(CarModels model,EngineModels engine, Colors color,BodyType bType, int nrOfDoors) {
+	public Car createCar(Model model,EngineModel engine, Color color,BodyType bType, int nrOfDoors) {
 		
-		if (model == CarModels.TOLEDO) {
+		if (model == Model.TOLEDO) {
 			return new SeatToledo(engine,color,bType,nrOfDoors);
 		} 
-		else if (model == CarModels.LEON) {
+		else if (model == Model.LEON) {
 			return new SeatLeon(engine,color,bType,nrOfDoors);
 		}
-		else if (model == CarModels.CORDOBA) {
+		else if (model == Model.CORDOBA) {
 			return new SeatCordoba(engine,color,bType,nrOfDoors);
 		}
 		else {

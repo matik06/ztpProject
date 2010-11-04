@@ -1,7 +1,7 @@
 package factories;
 
 import vehicles.*;
-import vehicles.enums.CarModels;;
+import vehicles.enums.Model;;
 
  public class CarFactories {
 	 
@@ -41,7 +41,7 @@ import vehicles.enums.CarModels;;
 //		
 //	}
 	 
-	public Car prepare(CarModels model) {
+	public Car prepare(Model model) {
 		
 		Car car = null;//buyCar(model);
 		
