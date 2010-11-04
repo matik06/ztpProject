@@ -1,15 +1,16 @@
 package factories;
 
+import vehicles.enums.*;
 import vehicles.Car;
-import vehicles.CarModels;
+
 
 public abstract class CarFactory {
 	
-	public abstract Car buyCar(CarModels model);
+	public abstract Car createCar(CarModels model,EngineModels engine, Colors color,BodyType bType, int nrOfDoors);
 	
-	public Car prepare(CarModels model) {
+	public Car prepare(CarModels model,EngineModels engine, Colors color,BodyType bType, int nrOfDoors) {
 	
-		Car car = buyCar(model);
+		Car car = createCar(model,engine,color,bType,nrOfDoors);
 		
 		car.checkOil();
 		car.wash();
