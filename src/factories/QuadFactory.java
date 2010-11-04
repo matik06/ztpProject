@@ -3,7 +3,7 @@ package factories;
 import vehicles.Vehicle;
 import vehicles.VehicleDetail;
 
-public abstract class CarFactory implements VehicleFactory{
+public abstract class QuadFactory implements VehicleFactory {
 
 	@Override
 	public Vehicle prepareVehicle(VehicleDetail vehicleDetails) {
@@ -14,6 +14,7 @@ public abstract class CarFactory implements VehicleFactory{
 		vehicle.wash();
 		vehicle.polish();
 		
-		return vehicle;
+		return vehicle;		
 	}
+
 }

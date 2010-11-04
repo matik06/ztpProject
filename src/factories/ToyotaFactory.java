@@ -2,24 +2,25 @@ package factories;
 
 import vehicles.enums.*;
 
-import vehicles.Car;
 import vehicles.ToyotaAvensis;
 import vehicles.ToyotaCorolla;
 import vehicles.ToyotaYaris;
+import vehicles.Vehicle;
+import vehicles.VehicleDetail;
 
 public class ToyotaFactory extends CarFactory {
 	
 	@Override
-	public Car createCar(Model model,EngineModel engine, Color color,BodyType bType, int nrOfDoors) {
+	public Vehicle createVehicle(VehicleDetail vehicleDetails) {
 		
-		if (model == Model.AVENSIS) {
-			return new ToyotaAvensis(engine,color,bType,nrOfDoors);
+		if (vehicleDetails.model == Model.AVENSIS) {
+		return new ToyotaAvensis(vehicleDetails);
 		} 
-		else if (model == Model.COROLLA) {
-			return new ToyotaCorolla(engine,color,bType,nrOfDoors);
+		else if (vehicleDetails.model == Model.COROLLA) {
+			return new ToyotaCorolla(vehicleDetails);
 		}
-		else if (model == Model.YARIS) {
-			return new ToyotaYaris(engine,color,bType,nrOfDoors);
+		else if (vehicleDetails.model == Model.YARIS) {
+			return new ToyotaYaris(vehicleDetails);
 		}
 		else {
 			return null;

@@ -4,17 +4,22 @@ import vehicles.enums.*;
 
 public abstract class Vehicle {
 
-	public Brand brand = null;
-	public Model model = null;
-	private EngineModel engine = null;
-	private Color color = null;
-	public Boolean sold = false;
+	protected int priceForSale;
+	protected int purchasePrice;
+	
+	protected Brand brand = null;
+	protected Model model = null;
+	protected EngineModel engine = null;
+	protected Color color = null;
+	protected Boolean sold = false;
 	
 
 	public Vehicle(VehicleDetail vehicleDetails) {
 		this.engine = vehicleDetails.engine;
 		this.color = vehicleDetails.color;
 		this.model = vehicleDetails.model;
+		this.priceForSale =(int) (vehicleDetails.purchasePrice * 1.2);
+		this.purchasePrice = vehicleDetails.purchasePrice;
 	}
 
 	
@@ -54,13 +59,53 @@ public abstract class Vehicle {
 		return sold;
 	}
 
-	public void setSold(Boolean sold) {
+	protected void setSold(Boolean sold) {
 		this.sold = sold;
 	}
 	
+	public void sell()
+	{
+		setSold(true);
+	}
+	
+	
+	
+	public int getPriceForSale() {
+		return priceForSale;
+	}
+
+
+	public void setPriceForSale(int priceForSale) {
+		this.priceForSale = priceForSale;
+	}
+
+
+	public int getPurchasePrice() {
+		return purchasePrice;
+	}
+
+
 	public abstract void checkOil();
 	public abstract void wash();
 	public abstract void polish();
+
+
+	@Override
+	public String toString() {
+		
+		StringBuffer sb = new StringBuffer();
+		
+		sb.append("Cena: ");
+		sb.append(priceForSale);
+		sb.append(" zł \n");
+		
+		sb.append(brand + " " + model + " " + engine);
+		sb.append('\n');
+		sb.append("Kolor: " + color);
+		
+		
+		return sb.toString();
+	}
 	
 	
 }

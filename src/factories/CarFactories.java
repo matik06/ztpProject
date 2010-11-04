@@ -5,51 +5,32 @@ import vehicles.enums.Model;;
 
  public class CarFactories {
 	 
-//	public static Car buyCar(CarModels model)
-//	{
-//		if (model == CarModels.A3) {
-//			return new AudiA3();
-//		} 
-//		else if (model == CarModels.A4) {
-//			return new AudiA4();
-//		}
-//		else if (model == CarModels.A6) {
-//			return new AudiA6();
-//		}
-//		else if (model == CarModels.TOLEDO) {
-//			return new SeatToledo();
-//		} 
-//		else if (model == CarModels.LEON) {
-//			return new SeatLeon();
-//		}
-//		else if (model == CarModels.CORDOBA) {
-//			return new SeatCordoba();
-//		}
-//		if (model == CarModels.AVENSIS) {
-//			return new ToyotaAvensis();
-//		} 
-//		else if (model == CarModels.COROLLA) {
-//			return new ToyotaCorolla();
-//		}
-//		else if (model == CarModels.YARIS) {
-//			return new ToyotaYaris();
-//		}
-//		else {
-//			return null;
-//		}
-//	 
-//		
-//	}
+	public static Vehicle createVehicle(VehicleDetail vehicleDetails)
+	{
+    	 if (vehicleDetails.model == Model.A3) {
+    		 return new AudiA3(vehicleDetails);
+		 }
+		 else if (vehicleDetails.model == Model.A4) {
+			 return new AudiA4(vehicleDetails);
+		 }
+		 else if (vehicleDetails.model == Model.A6) {
+			 return new AudiA6(vehicleDetails);
+		 }
+    	 //reszta samochodów, motocykli i quadów...
+		 else {
+			 return null;
+		 }	
+	 }
 	 
-	public Car prepare(Model model) {
+	public Vehicle prepare(VehicleDetail vehicleDetails) {
 		
-		Car car = null;//buyCar(model);
+		Vehicle vehicle = createVehicle(vehicleDetails);
 		
-		car.checkOil();
-		car.wash();
-		car.polish();
+		vehicle.checkOil();
+		vehicle.wash();
+		vehicle.polish();
 		
-		return car;
+		return vehicle;
 	}
 
 }

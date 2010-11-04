@@ -5,27 +5,26 @@ import vehicles.enums.*;
 import vehicles.AudiA3;
 import vehicles.AudiA4;
 import vehicles.AudiA6;
-import vehicles.Car;
+import vehicles.Vehicle;
+import vehicles.VehicleDetail;
 
 
 public class AudiFactory extends CarFactory {
 
 	@Override
-	public Car createCar(Model model ,EngineModel engine, Color color,BodyType bType, int nrOfDoors ) {
+	public Vehicle createVehicle(VehicleDetail vehicleDetails) {
 		
-		if (model == Model.A3) {
-			return new AudiA3(engine,color,bType,nrOfDoors);
+		if (vehicleDetails.model == Model.A3) {
+		return new AudiA3(vehicleDetails);
 		} 
-		else if (model == Model.A4) {
-			return new AudiA4(engine,color,bType,nrOfDoors);
+		else if (vehicleDetails.model == Model.A4) {
+			return new AudiA4(vehicleDetails);
 		}
-		else if (model == Model.A6) {
-			return new AudiA6(engine,color,bType,nrOfDoors);
+		else if (vehicleDetails.model == Model.A6) {
+			return new AudiA6(vehicleDetails);
 		}
 		else {
 			return null;
 		}
-			
 	}
-
 }

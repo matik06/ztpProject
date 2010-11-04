@@ -2,28 +2,28 @@ package factories;
 
 import vehicles.enums.*;
 
-import vehicles.Car;
 import vehicles.SeatCordoba;
 import vehicles.SeatLeon;
 import vehicles.SeatToledo;
+import vehicles.Vehicle;
+import vehicles.VehicleDetail;
 
 public class SeatFactory extends CarFactory {
 
 	@Override
-	public Car createCar(Model model,EngineModel engine, Color color,BodyType bType, int nrOfDoors) {
+	public Vehicle createVehicle(VehicleDetail vehicleDetails) {
 		
-		if (model == Model.TOLEDO) {
-			return new SeatToledo(engine,color,bType,nrOfDoors);
+		if (vehicleDetails.model == Model.TOLEDO) {
+		return new SeatToledo(vehicleDetails);
 		} 
-		else if (model == Model.LEON) {
-			return new SeatLeon(engine,color,bType,nrOfDoors);
+		else if (vehicleDetails.model == Model.LEON) {
+			return new SeatLeon(vehicleDetails);
 		}
-		else if (model == Model.CORDOBA) {
-			return new SeatCordoba(engine,color,bType,nrOfDoors);
+		else if (vehicleDetails.model == Model.CORDOBA) {
+			return new SeatCordoba(vehicleDetails);
 		}
 		else {
 			return null;
 		}
 	}
-
 }
