@@ -21,9 +21,9 @@ public class Test {
 		Db db = Db.getInstance();
 		
 		
-		VehicleDetail vd = new VehicleDetail(Model.A3, EngineModel._3000TDI,
-				BodyType.SEDAN, Color.GRANATOWY, 50000, Brand.AUDI);
-		vd.priceForSale = 55000;
+		VehicleDetail vd = new VehicleDetail(Model.A6, EngineModel._1800,
+				null, Color.SREBRNY, 35000, Brand.AUDI);
+		vd.priceForSale = 42000;
 		
 		Vehicle v = Factory.createVehicle(vd);
 		

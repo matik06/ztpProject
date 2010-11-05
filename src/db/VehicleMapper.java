@@ -69,8 +69,13 @@ public class VehicleMapper {
 			Color color = Color.valueOf(resultSet.getString("Vehicle.color"));
 			EngineModel engine = EngineModel.valueOf(
 					resultSet.getString("Vehicle.engine"));
-			BodyType bodyType = BodyType.valueOf(
-					resultSet.getString("Vehicle.BodyType"));
+			BodyType bodyType;
+			try {
+				bodyType = BodyType.valueOf(
+						resultSet.getString("Vehicle.BodyType"));
+			} catch (Exception e) {
+				bodyType = null;
+			}
 			
 			VehicleDetail vd = new VehicleDetail(model, engine, bodyType,
 					color, purchasePrice, brand);
@@ -83,6 +88,11 @@ public class VehicleMapper {
 			System.out.println(e);
 			return null;
 		}
+	}
+	
+	private BodyType getBodyType()
+	{
+		return null;
 	}
 	
 	public ArrayList<Vehicle> getAll() {
