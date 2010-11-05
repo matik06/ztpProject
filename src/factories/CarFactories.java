@@ -16,7 +16,33 @@ import vehicles.enums.Model;;
 		 else if (vehicleDetails.model == Model.A6) {
 			 return new AudiA6(vehicleDetails);
 		 }
-    	 //reszta samochodów, motocykli i quadów...
+		 else if (vehicleDetails.model == Model.TOLEDO) {
+			 return new SeatToledo(vehicleDetails);
+		 }
+		 else if (vehicleDetails.model == Model.CORDOBA) {
+			 return new SeatCordoba(vehicleDetails);
+		 }
+		 else if (vehicleDetails.model == Model.LEON) {
+			 return new SeatLeon(vehicleDetails);
+		 }
+		 else if (vehicleDetails.model == Model.YARIS) {
+			 return new ToyotaYaris(vehicleDetails);
+		 }
+		 else if (vehicleDetails.model == Model.AVENSIS) {
+			 return new ToyotaAvensis(vehicleDetails);
+		 }
+		 else if (vehicleDetails.model == Model.COROLLA) {
+			 return new ToyotaCorolla(vehicleDetails);
+		 }
+		 else if (vehicleDetails.model == Model.CBR600) {
+			 return new HondaCBR600(vehicleDetails);
+		 }
+		 else if (vehicleDetails.model == Model.CBR900) {
+			 return new HondaCBR900(vehicleDetails);
+		 }
+		 else if (vehicleDetails.model == Model.OUTLANDER500) {
+			 return new BombardierOutlander500(vehicleDetails);
+		 }
 		 else {
 			 return null;
 		 }	

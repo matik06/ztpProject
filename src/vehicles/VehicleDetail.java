@@ -4,7 +4,7 @@ import vehicles.enums.*;
 
 public class VehicleDetail {
 	
-	protected int id = -1;
+	public int id = -1;
 	
 	public Brand brand = null;
 	public Model model = null;	
@@ -12,10 +12,15 @@ public class VehicleDetail {
 	public BodyType bodyType = null;
 	public Color color = null;
 	public int purchasePrice = 0;
+	public int priceForSale = 0;
 	
+	
+	public VehicleDetail() {
+		
+	}
 	
 	public VehicleDetail(Model model, EngineModel engine, BodyType body,
-						 Color color, int purchasePrice, Brand brand, int id) {
+						 Color color, int purchasePrice, Brand brand) {
 		
 		this.model = model;
 		this.engine = engine;
@@ -23,6 +28,5 @@ public class VehicleDetail {
 		this.color = color;
 		this.purchasePrice = purchasePrice;
 		this.brand = brand;
-		this.id = id;
 	}
 }

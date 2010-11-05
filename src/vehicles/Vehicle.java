@@ -1,5 +1,8 @@
 package vehicles;
 
+import java.util.ArrayList;
+
+import db.VehicleMapper;
 import vehicles.enums.*;
 
 public abstract class Vehicle {
@@ -14,6 +17,8 @@ public abstract class Vehicle {
 	protected EngineModel engine = null;
 	protected Color color = null;
 	protected Boolean sold = false;
+	
+	protected static VehicleMapper vm = null;
 	
 
 	public Vehicle(VehicleDetail vehicleDetails) {
@@ -87,10 +92,38 @@ public abstract class Vehicle {
 		return purchasePrice;
 	}
 
-
 	public abstract void checkOil();
 	public abstract void wash();
 	public abstract void polish();
+	
+	
+	protected static VehicleMapper getVehicleMapper() {
+		
+		if (vm == null) {
+			vm = new VehicleMapper();
+		}
+		return vm;
+	}
+	
+	public static Vehicle getVehicleById(int id) {
+		
+		return getVehicleMapper().getSingle(id);
+	}
+	
+	public static ArrayList<Vehicle> getAll() {
+		
+		return getVehicleMapper().getAll();
+	}
+	
+	public static void deleteVehicleById(int id) {
+		
+		getVehicleMapper().delete(id);
+	}
+	
+	public static void addVehicle(Vehicle v)
+	{
+		getVehicleMapper().addNew(v);
+	}
 
 
 	@Override
